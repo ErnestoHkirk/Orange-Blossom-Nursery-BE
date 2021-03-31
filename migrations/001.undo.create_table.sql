@@ -1,13 +1,17 @@
-DROP TABLE IF EXISTS user_list;
-DROP TABLE IF EXISTS whiskey_reviews;
-
-ALTER TABLE whiskey
-  DROP COLUMN IF EXISTS user_id;
-
-DROP TABLE IF EXISTS whiskey_users;
-
-DROP TABLE if EXISTS questions;
-
-  
-DROP TABLE if EXISTS whiskey_list;
-DROP TABLE if EXISTS whiskey;
+DROP TABLE IF EXISTS delivery;
+DROP TABLE IF EXISTS payment;
+DROP TABLE IF EXISTS project_order;
+DROP TABLE IF EXISTS project;
+DROP TABLE IF EXISTS plant_order;
+DROP TABLE IF EXISTS order;
+DROP TABLE IF EXISTS plant_size;
+DROP TABLE IF EXISTS size_rate;
+DROP TABLE IF EXISTS vendor_plant_order;
+DROP TABLE IF EXISTS vendor_plant_prices;
+DROP TABLE IF EXISTS vendor_payment;
+DROP TABLE IF EXISTS vendor_delivery;
+DROP TABLE IF EXISTS vendor_purchase_order;
+DROP TABLE IF EXISTS client;
+DROP TABLE IF EXISTS plant;
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS vendor;
