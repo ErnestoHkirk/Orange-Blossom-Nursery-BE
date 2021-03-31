@@ -11,7 +11,7 @@ CREATE TABLE employee (
   id INTEGER PRIMARY KEY,
   employee_phone INTEGER,
   employee_name TEXT NOT NULL,
-  employee_username UNIQUE TEXT NOT NULL,
+  employee_username TEXT NOT NULL UNIQUE,
   employee_password TEXT NOT NULL
 );
 
@@ -21,7 +21,7 @@ CREATE TABLE plant (
   plant_time TEXT NOT NULL,
   plant_desc TEXT NOT NULL,
   plant_price TEXT NOT NULL,
-  quantity INTEGER DEFAULT SET 0
+  quantity INTEGER DEFAULT 0
 );
 
 CREATE TABLE client (
@@ -52,8 +52,8 @@ CREATE TABLE vendor_delivery (
   vendor_purchase_id INTEGER
         REFERENCES vendor_purchase_order(id) ON DELETE CASCADE NULL,
   delivery_date DATE,
-  quantity_delivered INTEGER DEFAULT SET 0,
-  quantity_rejected INTEGER DEFAULT SET 0
+  quantity_delivered INTEGER, --DEFAULT SET 0,
+  quantity_rejected INTEGER --DEFAULT SET 0
 );
 
 CREATE TABLE vendor_payment (
@@ -114,7 +114,7 @@ CREATE TABLE plant_order (
 
 CREATE TABLE project (
   id INTEGER PRIMARY KEY,
-  pick_up BOOLEAN SET DEFAULT 0,
+  pick_up BOOLEAN --SET DEFAULT 0,
 );
 
 CREATE TABLE project_order (
