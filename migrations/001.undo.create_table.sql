@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS payment;
 DROP TABLE IF EXISTS project_order;
 DROP TABLE IF EXISTS project;
 DROP TABLE IF EXISTS plant_order;
-DROP TABLE IF EXISTS order;
+DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS plant_size;
 DROP TABLE IF EXISTS size_rate;
 DROP TABLE IF EXISTS vendor_plant_order;

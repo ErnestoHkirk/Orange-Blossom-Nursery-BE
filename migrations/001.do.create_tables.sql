@@ -1,8 +1,9 @@
 CREATE TABLE vendor (
   id INTEGER PRIMARY KEY,
-  vendor_location TEXT NOT NULL,
+  vendor_name TEXT NOT NULL,
   vendor_address TEXT NOT NULL,
   city TEXT NOT NULL,
+  vendor_state TEXT NOT NULL,
   zip_code INTEGER NOT NULL,
   accounting_manager TEXT NOT NULL
 );
@@ -53,14 +54,14 @@ CREATE TABLE vendor_delivery (
         REFERENCES vendor_purchase_order(id) ON DELETE CASCADE NULL,
   delivery_date DATE,
   quantity_delivered INTEGER DEFAULT 0,
-  quantity_rejected INTEGER  DEFAULT 0
+  quantity_rejected INTEGER DEFAULT 0
 );
 
 CREATE TABLE vendor_payment (
   id INTEGER PRIMARY KEY,
   vendor_purchase_id INTEGER
         REFERENCES vendor_purchase_order(id) ON DELETE CASCADE NULL,
-  amount INTEGER NOT NULL,
+  amount NUMERIC,
   date_paid DATE
 );
 
@@ -114,7 +115,7 @@ CREATE TABLE plant_order (
 
 CREATE TABLE project (
   id INTEGER PRIMARY KEY,
-  pick_up BOOLEAN DEFAULT false,
+  pick_up BOOLEAN DEFAULT false
 );
 
 CREATE TABLE project_order (
@@ -136,7 +137,7 @@ CREATE TABLE payment (
 
 CREATE TABLE delivery (
   id INTEGER PRIMARY KEY,
-  project_id 
+  project_id INTEGER
         REFERENCES project(id) ON DELETE CASCADE NULL,
   delivery_date DATE,
   delivery_time TIME,
