@@ -3,8 +3,10 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
-const { NODE_ENV } = require('./config');
+const authRouter = require('./routes/auth/auth-route');
 const venderRouter = require('./routes/vendor/vender-route');
+
+const { NODE_ENV } = require('./config');
 
 const app = express();
 
@@ -17,6 +19,8 @@ app.use(cors());
 app.get('/', (req, res)=>{
   res.send('hi');
 });
+
+app.use('/api/auth', authRouter);
 app.use('/api/vendor', venderRouter);
 
 
