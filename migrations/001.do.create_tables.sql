@@ -52,8 +52,8 @@ CREATE TABLE vendor_delivery (
   vendor_purchase_id INTEGER
         REFERENCES vendor_purchase_order(id) ON DELETE CASCADE NULL,
   delivery_date DATE,
-  quantity_delivered INTEGER, --DEFAULT SET 0,
-  quantity_rejected INTEGER --DEFAULT SET 0
+  quantity_delivered INTEGER DEFAULT 0,
+  quantity_rejected INTEGER  DEFAULT 0
 );
 
 CREATE TABLE vendor_payment (
@@ -94,18 +94,18 @@ CREATE TABLE plant_size (
   PRIMARY KEY (plant_id, size_id)
 );
 
-CREATE TABLE order (
+CREATE TABLE orders (
   id INTEGER PRIMARY KEY,
   order_date DATE,
   employee_id INTEGER
         REFERENCES employee(id) ON DELETE CASCADE NULL,
   client_id INTEGER
-        REFERENCES client(id) ON DELETE CASCADE NULL,
+        REFERENCES client(id) ON DELETE CASCADE NULL
 );
 
 CREATE TABLE plant_order (
   order_id INTEGER
-        REFERENCES order(id) ON DELETE CASCADE NULL,
+        REFERENCES orders(id) ON DELETE CASCADE NULL,
   plant_id INTEGER
         REFERENCES plant(id) ON DELETE CASCADE NULL,
   quantity INTEGER,
@@ -114,21 +114,21 @@ CREATE TABLE plant_order (
 
 CREATE TABLE project (
   id INTEGER PRIMARY KEY,
-  pick_up BOOLEAN --SET DEFAULT 0,
+  pick_up BOOLEAN DEFAULT false,
 );
 
 CREATE TABLE project_order (
   project_id INTEGER
         REFERENCES project(id) ON DELETE CASCADE NULL,
   order_id INTEGER
-        REFERENCES order(id) ON DELETE CASCADE NULL,
+        REFERENCES orders(id) ON DELETE CASCADE NULL,
   PRIMARY KEY (project_id, order_id)
 );
 
 CREATE TABLE payment (
   id INTEGER NOT NULL,
   order_id INTEGER
-        REFERENCES order(id) ON DELETE CASCADE NULL,
+        REFERENCES orders(id) ON DELETE CASCADE NULL,
   amount_paid NUMERIC NOT NULL,
   total NUMERIC NOT NULL,
   interest_rate NUMERIC
