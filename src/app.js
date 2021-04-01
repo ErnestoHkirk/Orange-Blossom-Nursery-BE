@@ -5,6 +5,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const authRouter = require('./routes/auth/auth-route');
 const venderRouter = require('./routes/vendor/vender-route');
+const userRouter = require('./routes/user/user-route');
 
 const { NODE_ENV } = require('./config');
 
@@ -21,7 +22,9 @@ app.get('/', (req, res)=>{
 });
 
 app.use('/api/auth', authRouter);
+app.use('/api/user', userRouter);
 app.use('/api/vendor', venderRouter);
+
 
 
 

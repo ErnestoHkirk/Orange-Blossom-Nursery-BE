@@ -45,8 +45,9 @@ authRouter
             return res.status(400).send({error: incorrectInput});
           return employee;
         })
-        .then( employee => {
-          const validatePassword = AuthService.comparePassword(password, employee.employee_password)
+        .then( async employee => {
+          const validatePassword = await AuthService.comparePassword(password, employee.employee_password);
+         
           if(!validatePassword)
             return res.status(400).send({ error: incorrectInput });
           return employee;
@@ -67,7 +68,7 @@ authRouter
         user_id: req.user.id,
         name: req.user.employee_name
       };
-      res.send({ authToken: AuthService.createJwt(sub, payload) });
+      res.send({ authToken: AuthService.createJsonWebToken(sub, payload) });
     } catch (error) {
       next(error);
     }
