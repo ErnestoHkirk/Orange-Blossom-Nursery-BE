@@ -3,6 +3,11 @@ const VenderService = {
     return db
       .from('vendor')
       .select('*');
+  },
+  addVendor(db, data){
+    return db
+      .insert(data)
+      .into('vendor');
   }
 };
 
