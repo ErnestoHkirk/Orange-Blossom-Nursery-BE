@@ -14,6 +14,17 @@ StatementRouter
     });
 StatementRouter 
     .route('/:sessionID')
+    .delete(requireAuth, async (req,res,next)=> {
+        try {
+            const order_id = req.params.sessionID;
+            await StatementService.deletePlantOrders(req.app.get('db'), order_id)
+            await StatementService.deletePayment(req.app.get('db'), order_id)
+   
+            res.json('complete');
+        } catch(error){
+            next(error);
+        }
+    })
     .patch(requireAuth, jsonParser,  async (req, res, next) => {
         try{
             const id = req.params.sessionID;

@@ -1,20 +1,20 @@
 insert into employee (id, employee_phone, employee_name, employee_username, employee_password)
 VALUES
 (1, 1231234, 'Jackson Smith' ,'JSmith' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW'),
-(2, 1456478, 'Jonathan Johnson' ,'JJohnson' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW');
--- (3, 0498452, 'Jennifer Williams' ,'JWilliams' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW'),
--- (4, 5643211, 'Junniper Jones' ,'JJones' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW'),
--- (5, 1854324, 'Jose Garcia' ,'JGarcia' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW'),
--- (6, 4356753, 'Joe Brawn' ,'JBrawn' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW');
+(2, 1456478, 'Jonathan Johnson' ,'JJohnson' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW'),
+(3, 0498452, 'Jennifer Williams' ,'JWilliams' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW'),
+(4, 5643211, 'Junniper Jones' ,'JJones' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW'),
+(5, 1854324, 'Jose Garcia' ,'JGarcia' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW'),
+(6, 4356753, 'Joe Brawn' ,'JBrawn' ,'$2a$12$.mY4qBbLX4TXl6ERiKO7zObJYDdd.xRtr8ZbmGo1dkE9TfBfuRwYW');
 
 insert into vendor (id,vendor_name,vendor_address,city,vendor_state,zip_code,accounting_manager)
 VALUES
 (1,'Bangin Flowers','13465 SOUTH AVE','MIAMI','FLORIDA', 96321,'John'),
-(2,'Flower R US','32632 NORTH AVE','DETROIT','MICHIGAN', 96321,'Emily');
--- (3,'Nursery Ryhmes','74532 WEST AVE','BUTTE','DAKOTA', 96321,'Nathan'),
--- (4,'EZ-Flowers','43743 EAST AVE','ARCADIA','CALIFORNIA', 96321,'Barbara'),
--- (5,'Tulips.com','13463 LEMMING AVE','FULLERTON','CALIFORNIA', 96321,'Luke'),
--- (6,'All About Flowers','43216 LORDS AVE','MIAMI','FLORIDA', 96321,'Vanessa');
+(2,'Flower R US','32632 NORTH AVE','DETROIT','MICHIGAN', 96321,'Emily'),
+(3,'Nursery Ryhmes','74532 WEST AVE','BUTTE','DAKOTA', 96321,'Nathan'),
+(4,'EZ-Flowers','43743 EAST AVE','ARCADIA','CALIFORNIA', 96321,'Barbara'),
+(5,'Tulips.com','13463 LEMMING AVE','FULLERTON','CALIFORNIA', 96321,'Luke'),
+(6,'All About Flowers','43216 LORDS AVE','MIAMI','FLORIDA', 96321,'Vanessa');
 
 
 insert into plant(id,plant_name,plant_time,plant_desc,plant_price,quantity)
@@ -35,47 +35,41 @@ insert into plant(id,plant_name,plant_time,plant_desc,plant_price,quantity)
 insert into client(id,email_address,billing_account,client_contact,client_address,client_city,client_state,client_zip,client_phone,client_name,client_account_manager )
 VALUES 
 (1,'wantflowers1@live.com','135464323','Sarah','40423','Fullerton','CA',92890,6739024,'Fashionstore','Jennifer Lopez'),
-(2,'live2breath@aol.com','346342676','Simon','10442','Deerborn','MA',32523,6263414,'Fashionstore','Jennifer Lopez');
+(2,'live2@aol.com','346342676','Si','10442','Deerborn','MA',32523,6263414,'Fashion','Jennifer Lopez'),
+(3,'2breath@aol.com','332244','mon','10442','Deerborn','MA',32523,6263414,'Atlas','Jennifer Lopez'),
+(4,'breath@aol.com','34634255676','Sim','10442','Deerborn','MA',32523,6263414,'Island','Jennifer Lopez'),
+(5,'live2br@aol.com','76767654','Seth','10442','Deerborn','MA',32523,6263414,'Plantagious','Jennifer Lopez'),
+(6,'reth@aol.com','334455556','Eric','10442','Deerborn','MA',32523,6263414,'Plants R us','Jennifer Lopez'),
+(7,'live233@aol.com','1233444','Sic','10442','Deerborn','MA',32523,6263414,'Plantie','Jennifer Lopez');
 
 
 insert into vendor_purchase_order(id,employee_id, vendor_id, order_date)
 VALUES
 (1,1,1, '1995-09-02');
--- (2,6,3, '2005-03-23'),
--- (3,3,2, '1999-05-29'),
--- (4,4,5, '2000-01-19');
+
 
 
 insert into vendor_delivery(id,vendor_purchase_id,delivery_date,quantity_delivered,quantity_rejected)
 VALUES
 (1,1,'2021-05-10',3,1);
--- (2,1,'2021-03-15',3,1),
--- (3,1,'2021-06-08',3,1),
--- (4,1,'2021-11-25',3,1);
+
 
 
 insert into vendor_payment(id,vendor_purchase_id,amount,date_paid)
 VALUES
 (1,1,200.00,'2021-05-23');
--- (2,4,400.00,'2020-05-15'),
--- (3,3,245.00,'2018-05-09'),
--- (4,2,500.00,'2013-05-01');
 
 
 insert into vendor_plant_prices (id,plant_id,price)
 VALUES
 (1,1,45.6);
--- (2,8,32.6),
--- (3,10,40.6),
--- (4,3,12.6);
+
 
 
 insert into vendor_plant_order (vendor_plant_id,vendor_purchase_id,quantity)
 VALUES
 (1,1,400);
--- (2,4,5000),
--- (2,2,1430),
--- (3,3,350);
+
 
 
 
@@ -98,49 +92,33 @@ VALUES
 
 insert into orders (id,order_date,employee_id,client_id)
 VALUES
-(1, '2021-01-09',1,1);
--- (2, '2001-02-01',3,1),
--- (3, '2013-01-21',3,2),
--- (4, '2010-05-11',2,2),
--- (5, '2016-02-02',6,2);
+(1, '2021-01-09',1,1),
+(2, '2001-02-01',3,1),
+(3, '2013-01-21',3,2),
+(4, '2010-05-11',2,2),
+(5, '2016-02-02',6,2);
 
 
 insert into plant_order(order_id,plant_id,quantity)
 VALUES
-(1,2,2000);
--- (2,4,3000),
--- (3,11,40000),
--- (4,9,3200),
--- (5,7,50000),
--- (1,8,6500);
-
-
--- insert into project(id,pick_up)
--- VALUES
--- (1,FALSE ),
--- (2,FALSE),
--- (3,TRUE),
--- (4,FALSE);
-
-
--- insert into project_order(project_id,order_id)
--- VALUES
--- (1,1),
--- (2,2),
--- (3,3),
--- (4,4);
+(1,2,2000),
+(2,4,3000),
+(3,11,40000),
+(4,9,3200),
+(5,7,50000),
+(1,8,6500);
 
 
 insert into payment(id,order_id,amount_paid,total,interest_rate)
 VALUES
-(1,1,20.0,3,0);
--- (2,2,20.0,3,0),
--- (3,3,20.0,3,0),
--- (4,4,20.0,3,0);
+(1,1,20.0,3,0),
+(2,2,20.0,3,0),
+(3,3,20.0,3,0),
+(4,4,20.0,3,0);
 
 insert into delivery(id,order_id,delivery_date,delivery_time,delivery_distance,delivery_fee_rate)
 VALUES
-(1,1,'2016-02-02','02:22:21',55,32.00);
--- (2,2,'2016-02-02','02:22:21',55,32.00);
--- (3,3,'2016-02-02','02:22:21',55,32.00),
--- (4,4,'2016-02-02','02:22:21',55,32.00);
+(1,1,'2016-02-02','02:22:21',55,32.00),
+(2,2,'2016-02-02','02:22:21',55,32.00),
+(3,3,'2016-02-02','02:22:21',55,32.00),
+(4,4,'2016-02-02','02:22:21',55,32.00);
