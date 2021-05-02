@@ -8,9 +8,9 @@ const AuthService = {
       .where({ employee_username })
       .first();
   },
-  getEmployeeWithUsername(db, employee_username){
-    return db('employee')
-      .where({employee_username})
+  getEmployeeWithUserName(db, employee_username){
+    return db.from('employee')
+      .where('employee_username', employee_username)
       .first();
   },
   comparePassword(password, hash) {

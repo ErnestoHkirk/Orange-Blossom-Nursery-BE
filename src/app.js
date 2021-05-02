@@ -8,6 +8,8 @@ const venderRouter = require('./routes/vendor/vender-route');
 const userRouter = require('./routes/user/user-route');
 const plantRouter = require('./routes/plant/plant-route');
 const customerRouter = require('./routes/customer/customer-route');
+const orderRouter = require('./routes/order/order-route');
+const statementRouter = require('./routes/statement/statement-route');
 
 const { NODE_ENV } = require('./config');
 
@@ -28,6 +30,8 @@ app.use('/api/user', userRouter);
 app.use('/api/vendor', venderRouter);
 app.use('/api/plant', plantRouter);
 app.use('/api/customer', customerRouter);
+app.use('/api/order', orderRouter);
+app.use('/api/statement', statementRouter);
 
 
 
